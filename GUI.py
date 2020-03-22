@@ -162,6 +162,15 @@ class Ui_IDMS(object):
         self.tabWidget.addTab(self.feature_tab, icon1, "")
         self.feature_map_tab = QWidget()
         self.feature_map_tab.setObjectName(u"feature_map_tab")
+        self.graphicsView_5 = QGraphicsView(self.feature_map_tab)
+        self.graphicsView_5.setObjectName(u"graphicsView_5")
+        self.graphicsView_5.setGeometry(QRect(0, 0, 631, 461))
+        self.graphicsView_5.setStyleSheet(u"background-color: rgb(170, 255, 255);\n"
+"background-color: rgb(200, 198, 198);\n"
+"background-color: rgb(200, 196, 135);")
+        self.label_25 = QLabel(self.feature_map_tab)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setGeometry(QRect(20, 50, 581, 41))
         icon2 = QIcon()
         icon2.addFile(u"red_dot.png", QSize(), QIcon.Normal, QIcon.Off)
         icon2.addFile(u"start_logo.png", QSize(), QIcon.Normal, QIcon.On)
@@ -212,6 +221,15 @@ class Ui_IDMS(object):
         self.tabWidget.addTab(self.segmentation_tab, icon3, "")
         self.more_tab = QWidget()
         self.more_tab.setObjectName(u"more_tab")
+        self.graphicsView_6 = QGraphicsView(self.more_tab)
+        self.graphicsView_6.setObjectName(u"graphicsView_6")
+        self.graphicsView_6.setGeometry(QRect(0, 0, 631, 461))
+        self.graphicsView_6.setStyleSheet(u"background-color: rgb(170, 255, 255);\n"
+"background-color: rgb(200, 198, 198);\n"
+"background-color: rgb(200, 196, 135);")
+        self.label_26 = QLabel(self.more_tab)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setGeometry(QRect(20, 50, 581, 41))
         self.tabWidget.addTab(self.more_tab, icon3, "")
         self.about = QWidget()
         self.about.setObjectName(u"about")
@@ -288,6 +306,7 @@ class Ui_IDMS(object):
         self.checkBox_2.setText(QCoreApplication.translate("IDMS", u"Yes", None))
         self.pushButton_4.setText(QCoreApplication.translate("IDMS", u"Start", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.feature_tab), QCoreApplication.translate("IDMS", u"Feature Extraction", None))
+        self.label_25.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Work in progress....</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.feature_map_tab), QCoreApplication.translate("IDMS", u"Feature Maps", None))
         self.label_12.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Segment Images using Otsu's Method</span></p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:7pt; font-weight:400; color:#ffffff;\">Use this Software to segment images using Otsu's Method. Make sure your Image must be </span><span style=\" font-weight:400; color:#ffffff;\">Grayscale</span></p></body></html>", None))
@@ -307,11 +326,12 @@ class Ui_IDMS(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>", None))
         self.pushButton_7.setText(QCoreApplication.translate("IDMS", u"Segment", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.segmentation_tab), QCoreApplication.translate("IDMS", u"Segmentation", None))
+        self.label_26.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Work in progress....</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.more_tab), QCoreApplication.translate("IDMS", u"More..", None))
         self.label_16.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:24pt; text-decoration: underline; color:#00006d;\">About                     </span></p></body></html>", None))
         self.label_17.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><img src=\"abhi.png\"/></p></body></html>", None))
         self.label_18.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:18pt; color:#00006d;\">Abhishek Kumar</span></p></body></html>", None))
-        self.label_19.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Engineering Student, Research Scholar,</span></p></body></html>", None))
+        self.label_19.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Engineering Student, Research Scholar</span></p></body></html>", None))
         self.label_20.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Open Source Developer</span></p></body></html>", None))
         self.label_21.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:400; color:#ffffff;\">Gaya College of Engineering, Gaya</span></p></body></html>", None))
         self.label_22.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Contact -</span></p></body></html>", None))
@@ -319,22 +339,3 @@ class Ui_IDMS(object):
         self.label_24.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:400; color:#ffffff;\">Mobile - +919128451514</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about), QCoreApplication.translate("IDMS", u"About", None))
     # retranslateUi
-
-
-class ControlMainWindow(QtWidgets.QMainWindow):
-    def __init__(self, parent=None):
-        super(ControlMainWindow, self).__init__(parent)
-        self.ui = Ui_IDMS()
-        self.ui.setupUi(self)
-
-        self.ui.startButton.clicked.connect(lambda : self.ui.stackedWidget.setCurrentIndex(1))
-
-def run():
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = ControlMainWindow()
-    MainWindow.show()
-    sys.exit(app.exec_())
-
-if __name__ == "__main__":
-    run()
