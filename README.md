@@ -19,11 +19,12 @@ Install all the required modules using either pip or anaconda. Copy this reposit
 it as a project in any IDE
 
 # Running
-To start, Run the main.py file. Other files are linked with the main.py file. NO need to seperately run other files of this repository.
+To start, Run the main.py file. Other files are linked with the main.py file.
 
 # Usage
 No special Instruction needed. Just select your image using given buttons in the GUI. and press required given buttons to start your
-desired process.
+desired process. On Feature_Extraction Tab you can extract features from an image and On Segmentation Tab, You can segment your
+images using Otsu's Segmentation method. 
 
 # ScreenShots
 https://drive.google.com/drive/folders/1XlCUkMgAky_Iw0MiT4YtjvKsEcMikL73?usp=sharing
