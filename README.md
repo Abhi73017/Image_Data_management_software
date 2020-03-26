@@ -26,7 +26,7 @@ No special Instruction needed. Just select your image using given buttons in the
 desired process.
 
 # ScreenShots
-![Start Screen](https://photos.app.goo.gl/Js6CfVXCYqf4ngPb7)
+![Start Screen](https://photos.app.goo.gl/vYq97bkdk5oaMAJXA)
 ![Feature Extraction Tab](https://photos.app.goo.gl/fWWhFTdp4JBn2PGs9)
 ![Segmentation Tab](https://photos.app.goo.gl/yacTrSK9VCxWT4xK9)
 
