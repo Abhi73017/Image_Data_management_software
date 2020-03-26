@@ -1,8 +1,8 @@
-# Image_Data_management_software
+# Image_Data_management_software 
 Image Data Management Software
 
 This Software Project has been originally developed by Abhishek Kumar.
-Using this project, you can extract features of an image, can segment your image with otsu's segmentation method.
+Using this project, you can extract features of an image, can segment your image with otsu's segmentation method USING A NICE GUI.
 
 # Dependencies : -
 Numpy 1.18.1
