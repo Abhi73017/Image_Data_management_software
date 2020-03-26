@@ -1,12 +1,6 @@
-"""
-
-This module is an implementation of Otsu's method of segmentation
-@Author - Abhishek Kumar - Student(EEE) , Gaya College of Engineering, Gaya
-
-
-"""
-
 import math
+from tkinter import Tk, messagebox
+
 import numpy as np
 from matplotlib import pyplot as plt
 import PIL.Image
@@ -117,3 +111,7 @@ class Otsu_segmentation():
         h = a.Hist(img)
         a.threshold(h)
         plt.savefig('otsu.jpg')
+        root = Tk()
+        messagebox.showinfo("INFORMATION", "Your Image has been saved in you current working directory. Please close "
+                                           "the main window to find the image")
+        root.destroy()

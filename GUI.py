@@ -1,9 +1,3 @@
-"""
-
-This GUI file has been originally designed and developed by Abhishek Kumar - Student(EEE) , Gaya College of Engineering, Gaya
-
-"""
-
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QRect, QSize, Qt)
 from PySide2.QtGui import (QFont, QIcon)
 from PySide2.QtWidgets import *
