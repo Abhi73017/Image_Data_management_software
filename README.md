@@ -8,6 +8,8 @@ Using this project, you can extract features of an image, can segment your image
 Numpy 1.18.1
 Tkinter
 Pyside2
+math
+os
 PIL 7.0.0
 Pandas 1.0.2
 Matplotlib 3.2.0
