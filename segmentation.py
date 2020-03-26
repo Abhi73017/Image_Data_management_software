@@ -1,19 +1,25 @@
-#this module is an implementation of otsu's method of segmentation
+"""
+
+This module is an implementation of Otsu's method of segmentation
+@Author - Abhishek Kumar - Student(EEE) , Gaya College of Engineering, Gaya
+
+
+"""
 
 import math
 import numpy as np
 from matplotlib import pyplot as plt
-from PIL import Image
+import PIL.Image
 
 threshold_values = {}
-h = [1]
+
 
 class Otsu_segmentation():
 
     def __init__(self):
-        pass
+        self.h = [1]
 
-    def Hist(img):
+    def Hist(self,img):
         row, col = img.shape
         y = np.zeros(256)
         for i in range(0, row):
@@ -24,7 +30,7 @@ class Otsu_segmentation():
         plt.show()
         return y
 
-    def regenerate_img(img, threshold):
+    def regenerate_img(self,img, threshold):
         row, col = img.shape
         y = np.zeros((row, col))
         for i in range(0, row):
@@ -42,39 +48,40 @@ class Otsu_segmentation():
                 cnt += h[i]
         return cnt
 
-    def wieght(s, e):
+    def weight(self,s, e):
         w = 0
         for i in range(s, e):
-            w += h[i]
+            w += self.h[i]
         return w
 
-    def mean(s, e):
+    def mean(self,s, e):
         m = 0
-        w = Otsu_segmentation.wieght(s, e)
+        w = self.weight(s, e)
         for i in range(s, e):
-            m += h[i] * i
+            m += self.h[i] * i
 
         return m / float(w)
 
-    def variance(s, e):
+    def variance(self,s, e):
         v = 0
-        m = Otsu_segmentation.mean(s, e)
-        w = Otsu_segmentation.wieght(s, e)
+        m = self.mean(s, e)
+        w = self.weight(s, e)
         for i in range(s, e):
-            v += ((i - m) ** 2) * h[i]
+            v += ((i - m) ** 2) * self.h[i]
         v /= w
         return v
 
-    def threshold(h):
+    def threshold(self,h):
+        self.h = h
         cnt = Otsu_segmentation.countPixel(h)
         for i in range(1, len(h)):
-            vb = Otsu_segmentation.variance(0, i)
-            wb = Otsu_segmentation.wieght(0, i) / float(cnt)
-            mb = Otsu_segmentation.mean(0, i)
+            vb = self.variance(0, i)
+            wb = self.weight(0, i) / float(cnt)
+            mb = self.mean(0, i)
 
-            vf = Otsu_segmentation.variance(i, len(h))
-            wf = Otsu_segmentation.wieght(i, len(h)) / float(cnt)
-            mf = Otsu_segmentation.mean(i, len(h))
+            vf = self.variance(i, len(h))
+            wf = self.weight(i, len(h)) / float(cnt)
+            mf = self.mean(i, len(h))
 
             V2w = wb * (vb) + wf * (vf)
             V2b = wb * wf * (mb - mf) ** 2
@@ -97,20 +104,16 @@ class Otsu_segmentation():
             if not math.isnan(V2w):
                 threshold_values[i] = V2w
 
-    def get_optimal_threshold():
+    def get_optimal_threshold(self):
         min_V2w = min(threshold_values.values())
         optimal_threshold = [k for k, v in threshold_values.items() if v == min_V2w]
         print('optimal threshold', optimal_threshold[0])
         return optimal_threshold[0]
 
-
-image = Image.open('gray_test.png').convert("L")
-img = np.asarray(image)
-
-h = Otsu_segmentation.Hist(img)
-Otsu_segmentation.threshold(h)
-op_thres = Otsu_segmentation.get_optimal_threshold()
-
-res = Otsu_segmentation.regenerate_img(img, op_thres)
-plt.imshow(res)
-plt.savefig("otsu.png")
+    def segment(file):
+        image = PIL.Image.open(file).convert("L")
+        img = np.asarray(image)
+        a = Otsu_segmentation()
+        h = a.Hist(img)
+        a.threshold(h)
+        plt.savefig('otsu.jpg')

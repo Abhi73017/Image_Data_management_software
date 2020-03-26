@@ -1,10 +1,20 @@
-from PySide2 import QtWidgets
+"""
+
+This GUI file has been originally designed and developed by Abhishek Kumar - Student(EEE) , Gaya College of Engineering, Gaya
+
+"""
+
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QRect, QSize, Qt)
 from PySide2.QtGui import (QFont, QIcon)
 from PySide2.QtWidgets import *
 
+
 class Ui_IDMS(object):
-    def setupUi(self, IDMS):
+
+    def __init__(self):
+        pass
+
+    def UI_Setup(self, IDMS):
         if IDMS.objectName():
             IDMS.setObjectName(u"IDMS")
         IDMS.setFixedSize(642, 480)
@@ -215,6 +225,9 @@ class Ui_IDMS(object):
         self.pushButton_7.setGeometry(QRect(260, 330, 121, 41))
         self.pushButton_7.setFont(font5)
         self.pushButton_7.setAutoFillBackground(True)
+        self.label_27 = QLabel(self.segmentation_tab)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setGeometry(QRect(20, 60, 581, 51))
         icon3 = QIcon()
         icon3.addFile(u"red_dot.png", QSize(), QIcon.Selected, QIcon.Off)
         icon3.addFile(u"start_logo.png", QSize(), QIcon.Selected, QIcon.On)
@@ -275,16 +288,13 @@ class Ui_IDMS(object):
 
 
         QMetaObject.connectSlotsByName(IDMS)
-    # setupUi
 
     def retranslateUi(self, IDMS):
         IDMS.setWindowTitle(QCoreApplication.translate("IDMS", u"IDMS", None))
         self.label.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#ffffff;\">Image</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#ffffff;\">Data Management </span></p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#ffffff;\">Software</span></p></body></html>", None))
-#if QT_CONFIG(tooltip)
         self.startButton.setToolTip(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Start</span></p></body></html>", None))
-#endif // QT_CONFIG(tooltip)
         self.startButton.setText(QCoreApplication.translate("IDMS", u"Start", None))
         self.label_4.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Create csv file of pixel values of Image</span></p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:400; color:#ffffff;\">Single Image - </span></p></body></html>", None))
@@ -306,10 +316,11 @@ class Ui_IDMS(object):
         self.checkBox_2.setText(QCoreApplication.translate("IDMS", u"Yes", None))
         self.pushButton_4.setText(QCoreApplication.translate("IDMS", u"Start", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.feature_tab), QCoreApplication.translate("IDMS", u"Feature Extraction", None))
-        self.label_25.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Work in progress....</span></p></body></html>", None))
+        self.label_25.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Will be implemented soon....</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.feature_map_tab), QCoreApplication.translate("IDMS", u"Feature Maps", None))
         self.label_12.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Segment Images using Otsu's Method</span></p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:7pt; font-weight:400; color:#ffffff;\">Use this Software to segment images using Otsu's Method. Make sure your Image must be </span><span style=\" font-weight:400; color:#ffffff;\">Grayscale</span></p></body></html>", None))
+        self.label_27.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:8pt; font-weight:400; color:#ffffff;\">Note That If your ins't Grayscale, This software will convert your image into grayscale first.</span></p></body></html>", None))
         self.label_14.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:400; color:#ffffff;\">Select your Image (Grayscale) - </span></p></body></html>", None))
         self.pushButton_5.setText(QCoreApplication.translate("IDMS", u"Browse Image", None))
         self.textBrowser_4.setHtml(QCoreApplication.translate("IDMS", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -326,16 +337,16 @@ class Ui_IDMS(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>", None))
         self.pushButton_7.setText(QCoreApplication.translate("IDMS", u"Segment", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.segmentation_tab), QCoreApplication.translate("IDMS", u"Segmentation", None))
-        self.label_26.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Work in progress....</span></p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Will be implemented soon....</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.more_tab), QCoreApplication.translate("IDMS", u"More..", None))
         self.label_16.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:24pt; text-decoration: underline; color:#00006d;\">About                     </span></p></body></html>", None))
         self.label_17.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><img src=\"abhi.png\"/></p></body></html>", None))
         self.label_18.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:18pt; color:#00006d;\">Abhishek Kumar</span></p></body></html>", None))
         self.label_19.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Engineering Student, Research Scholar</span></p></body></html>", None))
-        self.label_20.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Open Source Developer</span></p></body></html>", None))
+        self.label_20.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Android Developer, Open Source Developer</span></p></body></html>", None))
         self.label_21.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:400; color:#ffffff;\">Gaya College of Engineering, Gaya</span></p></body></html>", None))
         self.label_22.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:16pt; color:#00006d;\">Contact -</span></p></body></html>", None))
         self.label_23.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:400; color:#ffffff;\">Email - Abhisheksingh73017@gmail.com</span></p></body></html>", None))
         self.label_24.setText(QCoreApplication.translate("IDMS", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:400; color:#ffffff;\">Mobile - +919128451514</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about), QCoreApplication.translate("IDMS", u"About", None))
-    # retranslateUi
+
