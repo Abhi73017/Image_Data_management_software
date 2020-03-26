@@ -19,7 +19,7 @@ Install all the required modules using either pip or anaconda. Copy this reposit
 it as a project in any IDE
 
 # Running
-To start Run the main.py file. Other files are linked with the main.py file. NO need to seperately run other files of this repository.
+To start, Run the main.py file. Other files are linked with the main.py file. NO need to seperately run other files of this repository.
 
 # Usage
 No special Instruction needed. Just select your image using given buttons in the GUI. and press required given buttons to start your
