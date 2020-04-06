@@ -29,4 +29,4 @@ images using Otsu's Segmentation method.
 # ScreenShots
 https://drive.google.com/drive/folders/1XlCUkMgAky_Iw0MiT4YtjvKsEcMikL73?usp=sharing
 
-# Thank You... Don't forget to give Star.
+# Thank You...
